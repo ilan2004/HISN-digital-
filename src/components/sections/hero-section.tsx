@@ -43,20 +43,22 @@ const services = [
 
 // ServiceCard Component
 function ServiceCard({ service, index }: { service: typeof services[0], index: number }) {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
-        <Link href={service.href}>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + (index * 0.1) }}
-                whileHover="hover"
-                className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg group cursor-pointer bg-black"
-                style={{ 
-                    transformStyle: "preserve-3d",
-                    perspective: "1000px"
-                }}
-            >
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 + (index * 0.1) }}
+            animate={isHovered ? "hover" : "initial"}
+            onTap={() => setIsHovered(!isHovered)}
+            className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg group cursor-pointer bg-black"
+            style={{ 
+                transformStyle: "preserve-3d",
+                perspective: "1000px"
+            }}
+        >
             {/* Background Image - comes out towards viewer with 3D effect and fade */}
             <motion.div
                 className="absolute inset-0"
@@ -146,28 +148,29 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
                     </motion.div>
                     
                     {/* Expand button - slides up from bottom */}
-                    <motion.button
-                        className="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-white text-sm font-semibold inline-flex items-center gap-2"
-                        variants={{
-                            hover: {
-                                y: 0,
-                                opacity: 1,
-                                transition: {
-                                    duration: 0.4,
-                                    delay: 0.3,
-                                    ease: [0.16, 1, 0.3, 1]
+                    <Link href={service.href}>
+                        <motion.button
+                            className="absolute bottom-6 md:bottom-8 left-6 md:left-8 text-white text-sm font-semibold inline-flex items-center gap-2 z-10"
+                            variants={{
+                                hover: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.4,
+                                        delay: 0.3,
+                                        ease: [0.16, 1, 0.3, 1]
+                                    }
                                 }
-                            }
-                        }}
-                        initial={{ y: 50, opacity: 0 }}
-                    >
-                        Expand
-                        <ChevronRight className="h-4 w-4" />
-                    </motion.button>
+                            }}
+                            initial={{ y: 50, opacity: 0 }}
+                        >
+                            Expand
+                            <ChevronRight className="h-4 w-4" />
+                        </motion.button>
+                    </Link>
                 </div>
             </div>
         </motion.div>
-        </Link>
     );
 }
 
@@ -264,7 +267,7 @@ export function HeroSection() {
                                 className="flex"
                                 animate={{ x: `-${currentSlide * 100}%` }}
                                 transition={{ 
-                                    duration: 0.8, 
+                                    duration: 0.5, 
                                     ease: [0.25, 0.1, 0.25, 1],
                                     type: "tween"
                                 }}
