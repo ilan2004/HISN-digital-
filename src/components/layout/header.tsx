@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { ChevronRight, Globe, Search, Menu, X } from "lucide-react";
@@ -36,9 +37,8 @@ export function Header() {
             <Container className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     {/* Logo */}
-                    <div className="flex flex-col leading-none">
-                        <span className="text-xl md:text-2xl font-black tracking-tight text-white">HISN DIGITAL</span>
-                        <span className="text-xs md:text-sm font-bold tracking-wider text-hisn-red">IT SOLUTIONS</span>
+                    <div className="flex items-center gap-3">
+                        <Image src="/logo.svg" alt="HISN Digital" width={200} height={60} className="h-8 md:h-10 w-auto" priority />
                     </div>
                 </Link>
 

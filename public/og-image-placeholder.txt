@@ -1,0 +1,18 @@
+OG Images Needed (1200x630px):
+
+1. /og-image.png - Main site image
+2. /og-cloud.png - Cloud Solutions page
+3. /og-cybersecurity.png - Cybersecurity Solutions page
+4. /og-infrastructure.png - IT Infrastructure page
+
+Also needed:
+- /icon-192.png (192x192px) - PWA icon
+- /icon-512.png (512x512px) - PWA icon
+- /apple-touch-icon.png (180x180px) - Apple touch icon
+
+You can create these images with your brand colors:
+- Background: Black (#000000)
+- Accent: Red (#DC2626)
+- Text: White (#FFFFFF)
+
+Use tools like Canva, Figma, or Photoshop to create professional OG images.

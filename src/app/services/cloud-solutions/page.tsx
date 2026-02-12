@@ -1,6 +1,18 @@
 import { Container } from "@/components/ui/container";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Cloud Solutions',
+  description: 'Migrate, optimize, and manage cloud environments with HISN Digital. Expert cloud strategy, migration, architecture, security, and managed services for AWS, Azure, Google Cloud, and Private Cloud.',
+  keywords: ['Cloud Migration', 'AWS', 'Azure', 'Google Cloud', 'Cloud Security', 'Hybrid Cloud', 'Cloud Architecture', 'Managed Cloud Services', 'Cloud Consulting'],
+  openGraph: {
+    title: 'Cloud Solutions | HISN Digital',
+    description: 'Expert cloud migration, optimization, and management services for AWS, Azure, and Google Cloud.',
+    images: ['/og-cloud.png'],
+  },
+};
 
 export default function CloudSolutionsPage() {
   return (

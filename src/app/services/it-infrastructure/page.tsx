@@ -1,6 +1,18 @@
 import { Container } from "@/components/ui/container";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'IT Infrastructure Solutions',
+  description: 'Design and manage robust IT infrastructure with HISN Digital. Data center management, server & storage solutions, network design, virtualization, and 24/7 infrastructure monitoring.',
+  keywords: ['IT Infrastructure', 'Data Center', 'Server Management', 'Storage Solutions', 'Network Design', 'Virtualization', 'Containerization', 'Infrastructure Monitoring', 'IT Asset Management'],
+  openGraph: {
+    title: 'IT Infrastructure Solutions | HISN Digital',
+    description: 'Robust IT infrastructure that ensures performance, availability, and scalability.',
+    images: ['/og-infrastructure.png'],
+  },
+};
 
 export default function ITInfrastructurePage() {
   return (

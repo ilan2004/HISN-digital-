@@ -1,6 +1,18 @@
 import { Container } from "@/components/ui/container";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Cybersecurity Solutions',
+  description: 'Protect your business from evolving cyber threats with HISN Digital. Comprehensive security services including SOC, VAPT, IAM, incident response, and compliance support for ISO, GDPR, HIPAA.',
+  keywords: ['Cybersecurity', 'Network Security', 'SOC', 'Penetration Testing', 'VAPT', 'Security Audit', 'IAM', 'Incident Response', 'Compliance', 'ISO', 'GDPR', 'HIPAA'],
+  openGraph: {
+    title: 'Cybersecurity Solutions | HISN Digital',
+    description: 'Proactive, layered security strategies to protect your business from cyber threats.',
+    images: ['/og-cybersecurity.png'],
+  },
+};
 
 export default function CybersecuritySolutionsPage() {
   return (
